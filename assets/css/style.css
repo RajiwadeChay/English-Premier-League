@@ -2,12 +2,6 @@
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
-
-/* 1.1. Eric Meyers Reset
-   http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-   ========================================================================== */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
 ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
@@ -114,12 +108,159 @@ li {
 /*=================================
   Header styling starts here
 =================================*/
+header {
+  background-color: #37003C;
+}
 
+header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+/*styling for logo start here*/
+h1 {
+  max-width: 50px;
+  max-height: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #FFF;
+  order: 2;
+}
+/*styling for logo end here*/
 
+/*styling for hamburger start here*/
+.hamburger {
+  display: block;
+  order: 1;
+}
 
+.hamburger:hover+nav {
+  display: block;
+}
 
+.bar,
+.bar:before,
+.bar:after {
+  width: 25px;
+  height: 3px;
+  display: block;
+  position: relative;
+  background-color: #FFF;
+  text-indent: -9999px;
+  transition: all 0.3s ease-in-out;
+}
 
+.bar:before {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  content: "";
+}
+
+.bar:after {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  content: "";
+}
+
+nav {
+  width: 0;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 51px;
+  left: 0;
+  background-color: #350138;
+  color: #FFF;
+  overflow-x: hidden;
+  transition: 0.5s ease;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+nav ul {
+  width: 100%;
+  border-top: 1px solid #FFF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav li {
+  width: 100%;
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid #FFF;
+  color: #350138;
+  text-align: center;
+}
+
+nav a {
+  width: 100%;
+  color: #FFF;
+  font-size: 16px;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+/*styling for hamburger end here*/
+/*styling for animated nav start here*/
+.active-html {
+  overflow-y: hidden;
+}
+
+.active-ham {
+  position: static;
+  z-index: 1;
+  left: 10px;
+}
+
+.active-nav {
+  width: 100%;
+  display: block;
+  color: #E90152;
+  opacity: 1;
+}
+
+.active-ham .bar {
+  background-color: transparent;
+}
+
+.active-ham .bar:before {
+  top: 0;
+  background: #E90152;
+  transform: rotate(225deg);
+}
+
+.active-ham .bar:after {
+  top: 0;
+  background: #E90152;
+  transform: rotate(-45deg);
+}
+
+/*styling for animated nav end here*/
+/*styling for logout start here*/
+.logout {
+  order: 3;
+}
+
+.logout a {
+  font-size: 20px;
+  text-indent: -9999px;
+  transition: all 0.5s ease;
+}
+
+.logout a::after {
+  margin-left: 8%;
+  content: "\f08b";
+  color: #FFF;
+  font-family: "fontAwesome";
+  float: right;
+  text-indent: 0;
+}
+/*styling for logout end here*/
 /*=================================
   Header styling ends here
 =================================*/  
@@ -127,11 +268,69 @@ li {
 /*=================================
   main styling starts here
 =================================*/
+/*login page styling start here*/
+.login-page main  {
+  background-image: linear-gradient(to bottom right, #9A3BFA , #F6298C);
+}
 
+.login-page main .wrapper {
+  padding: 60px 0;
+}
 
+.login-card {
+  padding: 25px 10%;
+  background-color: #FFF;
+}
 
+.login-card h2 {
+  margin-top: 25px;
+  font-size: 23px;
+  text-align: center;
+}
 
+.form-input {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.form-input input {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #76766F;
+  font-size: 16px;
+  transition: all .5s ease;
+}
+
+.form-input input:focus {
+  border-bottom: 1px solid #E90152;
+  outline: none;
+}
+
+.error {
+  margin-top: 5px;
+  color: #F00;
+  visibility: hidden;
+}
+
+.submit input {
+  width: 100%;
+  padding: 7px 5%;
+  border: none;
+  border-radius: 25px;
+  background-image: linear-gradient(to bottom right, #F6298C, #9A3BFA);
+  color: #FFF;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.submit input:hover {
+  background-image: linear-gradient(to bottom left, #F6298C, #9A3BFA);
+}
+/*login page styling end here*/
 
 
 
@@ -142,9 +341,28 @@ li {
 /*=================================
   footer styling starts here
 =================================*/ 
+.footer-sponsors {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.footer-sponsors figure {
+ text-align: center;
+}
 
+.footer-sponsors img {
+  max-width: 100px;
+  max-height: 100px;
+}
 
+.footer-sponsors figcaption {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
 
 
 
