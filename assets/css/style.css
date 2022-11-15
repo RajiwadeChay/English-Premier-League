@@ -201,10 +201,11 @@ nav li {
 
 nav a {
   width: 100%;
+  border-bottom: 1px solid transparent;
   color: #FFF;
   font-size: 16px;
   text-transform: capitalize;
-  transition: 0.5s;
+  transition: all 0.5s ease;
 }
 /*styling for hamburger end here*/
 /*styling for animated nav start here*/
@@ -260,6 +261,7 @@ nav a {
   font-family: "fontAwesome";
   float: right;
   text-indent: 0;
+  transition: all 0.5s ease;
 }
 /*styling for logout end here*/
 /*=================================
@@ -332,14 +334,7 @@ nav a {
   font-size: 16px;
   transition: all 0.5s ease;
 }
-
-.submit input:hover {
-  background-image: linear-gradient(to bottom left, #F6298C, #9A3BFA);
-}
 /*login page styling end here*/
-
-
-
 /*=================================
   main styling ends here
 =================================*/
@@ -395,7 +390,7 @@ footer {
 }
 
 .footer-links h4 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: #FFF;
   font-size: 20px;
 }
@@ -407,15 +402,15 @@ footer {
   justify-content: center;
 }
 
+.footer-links li {
+  margin-bottom: 5px;
+}
+
 .footer-links a {
+  border-bottom: 1px solid transparent;
   color: #FFF;
   font-size: 16px;
   transition: all 0.5s ease;
-}
-
-.footer-links a:hover {
-  color: #E90152;
-  text-decoration: underline;
 }
 /*styling for footer links end*/
 /*styling for footer copyrights starts*/
@@ -442,5 +437,139 @@ footer {
 =================================*/ 
 
 /*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {}  
+/*media query for hover effects start*/
+@media only screen and (max-width: 995px) {
+  nav a:hover {
+    color: #E90152;
+    border-bottom: 1px solid #E90152;
+  }
+  
+  .logout a:hover::after {
+    color: #E90152;
+  }
+  
+  .submit input:hover {
+    background-image: linear-gradient(to bottom left, #F6298C, #9A3BFA);
+  }
+  
+  .footer-links a:hover {
+    color: #E90152;
+    border-bottom: 1px solid #E90152;
+  }
+}  
+/*media query for hover effects end*/
+/*media query for 480px start*/
+@media only screen and (min-width: 480px) {
+  .login-card {
+    margin: 0 10%;
+  }
+
+  .footer-links {
+    flex-direction: row;
+  }
+}  
+/*media query for 480px end*/
+/*media query for 768px start*/
+@media only screen and (min-width: 768px) {
+  h1 {
+    padding: 5px 1%;
+    margin: 7px 0;
+  }
+
+  .login-page main .wrapper {
+    padding: 70px 0;
+  }
+
+  .login-card {
+    margin: 0 25%;
+    padding: 25px 5%;
+  }
+
+  .footer-sponsors li {
+    flex-basis: 33.33%;
+  }
+
+  .footer-sponsors {
+    margin-bottom: 10px;
+  }
+
+  .footer-copyrights {
+    flex-direction: row;
+  }
+
+  .copyright {
+    margin-bottom: 0;
+  }
+}
+/*media query for 768px end*/
+/*media query for 995px start*/
+@media only screen and (min-width: 995px) {
+
+  h1 {
+    order: 1;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav {
+    width: 100%;
+    margin-left: 3%;
+    display: block;
+    position: static;
+    order: 2;
+    opacity: 1;
+  }
+
+  nav ul {
+    width: auto;
+    border: none;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  nav li {
+    width: auto;
+    padding: 2px 0;
+    margin-right: 3%;
+    border-bottom: 1px solid transparent;
+  }
+
+  .login-card {
+    margin: 0 30%;
+  }
+
+  .footer-sponsors li {
+    flex-basis: 20%;
+  }
+}
+/*media query for 995px end*/
+/*media query for 1024px start*/
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  h1 {
+    padding: 5px 0.5%;
+    margin: 10px 0;
+  }
+
+  .footer-links {
+    padding: 15px 3%;
+  }
+}
+/*media query for 1024px end*/
+/*media query for 1200px start*/
+@media only screen and (min-width: 1200px) {
+  .login-card {
+    padding: 30px 5%;
+    margin: 0 35%;
+  }
+
+  .login-page main .wrapper {
+    padding: 100px 0;
+  }
+}
+/*media query for 1200px end*/
