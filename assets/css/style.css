@@ -122,7 +122,8 @@ header .wrapper {
 h1 {
   max-width: 50px;
   max-height: 50px;
-  padding: 5px;
+  padding: 5px 2%;
+  margin: 5px 0;
   border-radius: 50%;
   background-color: #FFF;
   order: 2;
@@ -279,11 +280,15 @@ nav a {
 
 .login-card {
   padding: 25px 10%;
+  border-radius: 25px;
   background-color: #FFF;
 }
 
+.login-card figure {
+  margin: 25px 0;
+}
+
 .login-card h2 {
-  margin-top: 25px;
   font-size: 23px;
   text-align: center;
 }
@@ -301,6 +306,7 @@ nav a {
   padding: 10px 0;
   border: none;
   border-bottom: 1px solid #76766F;
+  display: block;
   font-size: 16px;
   transition: all .5s ease;
 }
@@ -341,12 +347,21 @@ nav a {
 /*=================================
   footer styling starts here
 =================================*/ 
+footer {
+  margin: 20px 0; 
+}
+
+/*styling for footer sponsors starts*/
 .footer-sponsors {
-  margin: 20px 0;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
+}
+
+.footer-sponsors li {
+  margin: 10px 0;
+  flex-basis: 50%;
 }
 
 .footer-sponsors figure {
@@ -363,18 +378,69 @@ nav a {
   font-size: 16px;
   font-weight: 700;
 }
+/*styling for footer sponsors end*/
+/*styling for footer links starts*/
+.footer-links {
+  padding: 10px 5%;
+  display: flex;
+  align-items: flex-start;
+  background-color: #350138;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+.footer-links > div {
+  margin-bottom: 10px;
+  flex-basis: 100%;
+}
 
+.footer-links h4 {
+  margin-bottom: 5px;
+  color: #FFF;
+  font-size: 20px;
+}
 
+.footer-links ul {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.footer-links a {
+  color: #FFF;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.footer-links a:hover {
+  color: #E90152;
+  text-decoration: underline;
+}
+/*styling for footer links end*/
+/*styling for footer copyrights starts*/
+.footer-copyrights {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.copyright {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  max-height: 150px;
+}
+/*styling for footer copyrights end*/
  /*=================================
   footer styling ends here
 =================================*/ 
 
 /*media query starts*/
 /*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
-
-
-
-}  
+@media only screen and (max-width: 995px) {}  
